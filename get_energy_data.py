@@ -31,10 +31,12 @@ try:
         VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
    # Execute the SQL command
-        cursor.execute(sql,(data['battery']['energy_imported'], data['battery']['energy_exported'],\
+        cursor.execute(sql,(data['battery']['instant_power'], data['battery']['energy_imported'], data['battery']['energy_exported'],\
         data['load']['instant_power'], data['load']['energy_imported'], data['load']['energy_exported'], \
         data['solar']['instant_power'], data['solar']['energy_imported'], data['solar']['energy_exported'], \
         data['site']['instant_power'], data['site']['energy_imported'], data['site']['energy_exported']))
+
+    connection.commit()
 
 finally:
 # disconnect from server
