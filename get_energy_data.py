@@ -10,4 +10,7 @@ data = r.json()
 pp = pprint.PrettyPrinter(indent=2)
 pp.pprint(data)
 # An example of pulling out individual values
-print("Solar instant reactive power: ",data['solar']['instant_reactive_power'])
+print("Solar power: ",data['solar']['instant_power'])
+print("House load: ",data['load']['instant_power'])
+print("Powerwall: ",data['battery']['instant_power'])
+print("BGE: ",data['site']['instant_power'])
