@@ -28,13 +28,13 @@ try:
         load_instant_power, load_energy_imported, load_energy_exported, \
         solar_instant_power, solar_energy_imported, solar_energy_exported, \
         grid_instant_power, grid_energy_imported, grid_energy_exported) \
-        VALUES ('data['battery']['instant_power'], data['battery']['energy_imported'], 'data['battery']['energy_exported']',\
-        'data['load']['instant_power']', 'data['load']['energy_imported']', 'data['load']['energy_exported']', \
-        'data['solar']['instant_power']', 'data['solar']['energy_imported']', 'data['solar']['energy_exported']', \
-        'data['site']['instant_power']', 'data['site']['energy_imported']', 'data['site']['energy_exported']')"
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
 
    # Execute the SQL command
-        connection.commit()
+        cursor.execute(sql,(data['battery']['energy_imported'], 'data['battery']['energy_exported']',\
+        'data['load']['instant_power']', 'data['load']['energy_imported']', 'data['load']['energy_exported']', \
+        'data['solar']['instant_power']', 'data['solar']['energy_imported']', 'data['solar']['energy_exported']', \
+        'data['site']['instant_power']', 'data['site']['energy_imported']', 'data['site']['energy_exported']'))
 
 finally:
 # disconnect from server
