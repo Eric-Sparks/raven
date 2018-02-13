@@ -1,6 +1,10 @@
 # This script connects to the Telsa Powerwall 2 gateway API and shows
 # the real-time electron between the solar panels, Powerwall, grid,
 # and the house (load).
+#
+# This script uses the API instead of the querying the database to
+# reduce the load on the database.  This script is set to update
+# every 1 second or as defined in the time.sleep function.
 
 #!/usr/bin/python3
 import json
