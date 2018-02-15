@@ -24,7 +24,7 @@ while True:
     print("Solar power: ",data['solar']['instant_power'])
     print("House load: ",data['load']['instant_power'])
     print("Powerwall: ",data['battery']['instant_power'])
-    print("BGE: ",data['site']['instant_power'])
+    print("Grid: ",data['site']['instant_power'])
     
     time.sleep(1)
 
