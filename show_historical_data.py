@@ -14,7 +14,11 @@ try:
      sql = "SELECT min(solar_energy_exported) FROM `Gateway_Data` WHERE DATE(`date_time`) = CURDATE()"
      cursor.execute(sql)
      start_solar_odometer = cursor.fetchone()
-     print(start_solar_odometer['min(solar_energy_exported)'])
+
+     sql = "SELECT max(solar_energy_exported) FROM `Gateway_Data` WHERE DATE(`date_time`) = CURDATE()"
+     cursor.execute(sql)
+     current_solar_odometer = cursor.fetchone()
+     print((current_solar_odometer['max(solar_energy_exported)']) - (start_solar_odometer['min(solar_energy_exported)']))
 
 finally:
      connection.close()
