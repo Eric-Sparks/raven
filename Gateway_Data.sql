@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 13, 2018 at 06:18 PM
+-- Generation Time: Feb 15, 2018 at 02:02 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.1.13
 
@@ -35,7 +35,6 @@ CREATE TABLE `Gateway_Data` (
   `battery_energy_exported` int(11) NOT NULL,
   `load_instant_power` int(11) NOT NULL,
   `load_energy_imported` int(11) NOT NULL,
-  `load_energy_exported` int(11) NOT NULL,
   `solar_instant_power` int(11) NOT NULL,
   `solar_energy_imported` int(11) NOT NULL,
   `solar_energy_exported` int(11) NOT NULL,
