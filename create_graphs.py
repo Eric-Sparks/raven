@@ -25,7 +25,7 @@ import pymysql.cursors
 import requests
 
 # Open database connection
-connection = pymysql.connect(host='localhost',user='sol',password='TheSun',db='Energy_Usage',charset='utf8mb4',cursorclass=pymysql.cursors.DictCursor)
+connection = pymysql.connect(host='localhost',user='sol',password='TheSun',db='Energy_Usage',charset='utf8mb4',cursorclass=pymysql.cursors.SSCursor)
 
 try:
 
@@ -33,7 +33,7 @@ try:
 # Grab solar data for the last 7 days
         sql = "SELECT `date_time`,`solar_instant_power` FROM `Gateway_Data` WHERE DATE(`date_time`) BETWEEN DATE_SUB(CURRENT_DATE(), INTERVAL 7 DAY_HOUR) and CURRENT_TIME() GROUP BY date_time ORDER BY date_time"
         cursor.execute(sql)
-        weekly_solar = cursor.fetchone()
+        weekly_solar = cursor.fetchall_unbuffered()
 
 finally:
     connection.close
