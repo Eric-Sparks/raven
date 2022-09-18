@@ -1,4 +1,4 @@
-This is a project to build a script to consume the data from the Tesla Power Gateway, store it in a database, and also be able to display it in real-time on a webpage.
+This is a project to build a script to consume the data from the Tesla Power Gateway, attached to the PowerWall, store it in a database, and also be able to display it in real-time on a webpage. 
 
 https://forums.tesla.com/forum/forums/rest-interface-powerwall-2-energy-gateway
 
